@@ -1,0 +1,30 @@
+// World color
+
+vec3 dayworldcolor = vec3(1.6, 1.55, 1.5);
+vec3 duskworldcolor = vec3(1.6, 1.2, 0.5);
+vec3 nightworldcolor = vec3(0.3, 0.35, 0.45);
+vec3 rainworldcolor = vec3(0.41, 0.52, 0.63);
+vec3 shadowcolor = vec3(0.35, 0.48, 0.61);
+
+// Sky color
+
+vec4 skydaylight = vec4(0.2, 0.42, 0.66, 1.0);
+vec4 skydusklight = vec4(0.15, 0.35, 0.42, 1.0);
+vec4 skynightlight = vec4(0.09, 0.1, 0.23, 1.0);
+vec4 skydayrainlight = vec4(1.0, 1.0, 1.0, 1.0);
+vec4 skynightrainlight = vec4(0.1, 0.1, 0.1, 1.0);
+
+// Cloud color
+
+vec4 cloudday = vec4(1.2, 1.2, 1.2, 1.0);
+vec4 cloudnight = vec4(0.01, 0.012, 0.015, 1.0);
+vec4 clouddusk = vec4(1.3, 0.78, 0.33, 1.0)*2.0;
+vec4 clouddayrain = vec4(0.6, 0.6, 0.6, 1.0);
+vec4 cloudnightrain = vec4(0.1, 0.1, 0.1, 1.0);
+
+// Time color
+
+vec3 daysuncolor = vec3(1.1, 1.0, 1.0);
+vec3 dusksuncolor = vec3(1.6, 0.7, -0.4);
+vec3 nightsuncolor = vec3(1.1, 1.2, 1.3);
+vec3 rainsuncolor = vec3(1.0, 1.0, 1.0);

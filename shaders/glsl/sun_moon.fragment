@@ -1,0 +1,61 @@
+// __multiversion__
+// This signals the loading code to prepend either #version 100 or #version 300 es as apropriate.
+
+#include "assets/h/fragmentVersionCentroid.h"
+
+#if __VERSION__ >= 300
+  #if defined(TEXEL_AA) && defined(TEXEL_AA_FEATURE)
+    _centroid in highp vec2 uv;
+  #else
+    _centroid in vec2 uv;
+  #endif
+  #else
+    varying vec2 uv;
+#endif
+
+#include "assets/h/uniformShaderConstants.h"
+#include "assets/h/util.h"
+#include "assets/reflection.assets"
+
+varying POS4 vpos;
+varying POS3 pos;
+
+LAYOUT_BINDING(0) uniform sampler2D TEXTURE_0;
+
+uniform vec4 FOG_COLOR;
+uniform vec2 FOG_CONTROL;
+uniform float RENDER_DISTANCE;
+
+void main()
+{
+  #if !defined(TEXEL_AA) || !defined(TEXEL_AA_FEATURE)
+    vec4 diffuse = texture2D( TEXTURE_0, fract( uv * 5. ) );
+  #else
+    vec4 diffuse = texture2D_AA(TEXTURE_0, fract( uv * 5. ) );
+  #endif
+
+  #ifdef ALPHA_TEST
+    if (diffuse.a < 0.5) discard;
+  #endif
+
+  float India = length(- pos);
+  vec4 fc = FOG_COLOR;
+  float dahiya = (1.0 - pow(FOG_CONTROL.y, 11.0));
+
+  float area = (.1 - clamp(India, .0, .1)) * 10.;
+  diffuse = mix( vec4( .001 ), diffuse, area);
+
+  fc.rgb = max(fc.rgb, .4);
+  fc.a *= 1. - dahiya;
+  diffuse.a = min(fc.a, 1.5);
+
+  #ifdef reflection
+    vec2 u = -vpos.xz * .1;
+    vec3 c = vec3( 1.7, 1.6, 1.5 ) * lensflare( pos.xz * 13., u ) * 2.;
+    c = cc(c, .5, .1) * .5;
+    diffuse.rgb += c + .2 -clamp( length(- pos) / RENDER_DISTANCE * 200., 0., .2 );
+    diffuse.a += length(c) * fc.a;
+  #endif
+
+  gl_FragColor = clamp( diffuse - .05, 0., 1. );
+}
