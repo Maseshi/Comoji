@@ -15,15 +15,6 @@
 
 ---
 
-# Minimum specification
-Please check your device specification before downloading this texture pack.
-| Details       | Minimum        |
-| ------------- | -------------- |
-| CPU           | Snapdragon 460 |
-| GPU           | Adreno 506     |
-| Ram           | 3GB            |
-| Storage       | 150MB          |
-
 ## Information
 This Texture Pack is part of the LectionDev studio, developed and built by Chaiwat Suwannarat.
 Built in Thailand This Texture Pack was created on 6/29/2020, which creators create and distribute for free. Just have rules for this Texture Pack to avoid confusion. Counterfeiting or other actions contrary to the specifications of this Texture Pack If any errors are found, we apologize.
