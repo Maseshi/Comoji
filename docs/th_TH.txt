@@ -1,5 +1,5 @@
 >>> ข้อมูล
-แพ็คเนื้อนี้เป็นส่วนหนึ่งของสตูดิโอ LectionDev พัฒนาและสร้างโดย นายชัยวัฒน์สุวรรณรัตน์
+แพ็คเนื้อนี้เป็นส่วนหนึ่งของสตูดิโอ LectionDev พัฒนาและสร้างโดย นายชัยวัฒน์ สุวรรณรัตน์(Shinozaki)
 สร้างขึ้นในประเทศไทยชุดเนื้อนี้ถูกสร้างขึ้นเมื่อวันที่ 6 กรกฎาคม 2563 ซึ่งผู้สร้าง สร้างและแจกจ่ายฟรี เพียงแค่มีกฎสำหรับ Texture Pack นี้เพื่อหลีกเลี่ยงความสับสน การปลอมแปลงหรือการกระทำอื่น ๆ ที่ขัดต่อข้อกำหนดของชุดพื้นผิวนี้ หากพบข้อผิดพลาดใดๆ เราขออภัย
 
 ========================================
@@ -34,18 +34,12 @@ X สิ่งที่ไม่ได้รับอนุญาตให้ท
 
 >>> ติดต่อหรือโซเชียลมีเดีย
 
-• LectionDev
-Facebook: lectiondev.page
-YouTube: https://www.youtube.com/channel/UC5Il8WYNEx_xKjuVGtSVkOg
-GitHub: https://github.com/LectionDev
-Website: https://lectiondev.web.app
-Gmail: lectionth@gmail.com
-
-• Chaiwat Suwannarat
-Facebook: https://github.com/Shinosaki
+• นายชัยวัฒน์ สุวรรณรัตน์(Shinozaki)
+Facebook: https://web.facebook.com/ChaiwatSuwannarat/
+Github: https://github.com/Shinosaki/
 Discord: Shinozaki#9467
 Gmail: dermhioasw123@gmail.com
 
 ========================================
-====== LectionDev. © 2020 Comoji. ======
+======= Shinozaki. ©2020 Comoji. =======
 ========================================
