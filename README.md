@@ -8,15 +8,15 @@
     <img src="https://forthebadge.com/images/badges/built-for-android.svg" alt="built for android" />
   </p>
   <p>
-    <img src="https://img.shields.io/github/stars/Shinosaki/comoji.svg" alt="stars" />
-    <img src="https://img.shields.io/github/license/Shinosaki/comoji.svg" alt="license" />
+    <img src="https://img.shields.io/github/stars/Maseshi/comoji.svg" alt="stars" />
+    <img src="https://img.shields.io/github/license/Maseshi/comoji.svg" alt="license" />
   </p>
 </div>
 
 ---
 
 ## Information
-This Texture Pack is part of the LectionDev studio, developed and built by Chaiwat Suwannarat.
+This Textures Pack was developed and created by Chaiwat Suwannarat(Maseshi).
 Built in Thailand This Texture Pack was created on 6/29/2020, which creators create and distribute for free. Just have rules for this Texture Pack to avoid confusion. Counterfeiting or other actions contrary to the specifications of this Texture Pack If any errors are found, we apologize.
 
 ## Permission

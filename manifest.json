@@ -2,17 +2,17 @@
    "format_version": 2,
    "header": {
       "name": "§6Co§emo§fji",
-      "description": "With this pack you will be able to enjoy more Minecraft games and may spend more time playing! \n§eNot only make it beautiful But also add some missing things such as music, sound etc.\n\n§l§7Minimum specification\n§r§6CPU§r: Snapdragon 460\n§6GPU§r: Adreno 506\n§6Ram§r: 3GB\n§6Storage§r: 500MB \n\n§6§oIf you like our work, you can follow us in many ways: \n§r§l§9Facebook§r: lectiondev.page \n§l§4YouTube§r: LectionDev \n§l§0GitHub§r: LectionDev \n§l§8Website§r: https://lectiondev.web.app",
+      "description": "With this pack you will be able to enjoy more Minecraft games and may spend more time playing! \n§eNot only make it beautiful But also add some missing things such as music, sound etc.\n\n§l§7Minimum specification\n§6Compatibility requirements§r: Arm v8a 64-bit device\n§6Memory§r: 3 GB and above\n§r§6Supported system§r: Android 7.0 and above\n§6Storage§r: Please reserve 500 MB of space \n\n§6§oIf you like our work, you can follow us in many ways: \n§r§l§9Facebook§r: Chaiwat Suwannarat \n§l§9YouTube§r: Maseshi#9467 \n§l§0GitHub§r: Maseshi \n§l§8Website§r: https://maseshi.web.app",
       "uuid": "aff1aaab-835b-4765-8d9e-0f840d8950d7",
       "min_engine_version": [ 1, 14, 0 ],
-      "version": [ 1, 1, 7 ]
+      "version": [ 1, 1, 8 ]
    },
    "modules": [
       {
          "type": "resources",
-         "description": "With this pack you will be able to enjoy more Minecraft games and may spend more time playing! \n§eNot only make it beautiful But also add some missing things such as music, sound etc.\n\n§l§7Minimum specification\n§r§6CPU§r: Snapdragon 460\n§6GPU§r: Adreno 506\n§6Ram§r: 3GB\n§6Storage§r: 500MB \n\n§6§oIf you like our work, you can follow us in many ways: \n§r§l§9Facebook§r: lectiondev.page \n§l§4YouTube§r: LectionDev \n§l§0GitHub§r: LectionDev \n§l§8Website§r: https://lectiondev.web.app",
+         "description": "With this pack you will be able to enjoy more Minecraft games and may spend more time playing! \n§eNot only make it beautiful But also add some missing things such as music, sound etc.\n\n§l§7Minimum specification\n§6Compatibility requirements§r: Arm v8a 64-bit device\n§6Memory§r: 3 GB and above\n§r§6Supported system§r: Android 7.0 and above\n§6Storage§r: Please reserve 500 MB of space \n\n§6§oIf you like our work, you can follow us in many ways: \n§r§l§9Facebook§r: Chaiwat Suwannarat \n§l§9YouTube§r: Maseshi#9467 \n§l§0GitHub§r: Maseshi \n§l§8Website§r: https://maseshi.web.app",
          "uuid": "5b013357-635b-41ce-9c98-e9e4a105d580",
-         "version": [ 1, 1, 7 ]
+         "version": [ 1, 1, 8 ]
       }
    ]
 }
