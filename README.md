@@ -23,26 +23,27 @@ Built in Thailand This Texture Pack was created on 6/29/2020, which creators cre
 Please read the detailed information about this Texture Pack in detail and strictly comply with the requirements.
 
 - [x] **Things allowed:**
-- I am allow to share the texture of this pack.
+- I allow the textures of this pack to be shared with the source.
 - Allow posting for this pack surface with the name of the creator clearly.
 - Allowed to report errors about this Texture Pack on my website.
 - Can read internal files
-- Can be used with videos, may or may not contain the name of the creator
+- Can be used with videos clearly marked by the creator.
 
 - [ ] **Things not allowed to do:**
 - Do not allow to delete, cut, copy, change my files or folders.
-- Used to write media without a clear name of the creator.
+- Used to make media without the explicit name of the creator.
 - Present through other websites because it will cause others to be confused.
 - Use this set for illegal purposes.
 - Tarnish with this pack
 - Not allowed to resell
+- Combining with other textures packs is not allowed.
 
 ## Credits
 Texture pack or other information That I borrowed all to enhance the graphics performance
 
 - Vanilla
 (Sounds, Music, other...)
-By **Mojang**
+By **Mojang AB**
 
 ## Issues?
 
