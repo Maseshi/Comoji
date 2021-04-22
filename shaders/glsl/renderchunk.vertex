@@ -1,16 +1,9 @@
 // __multiversion__
 // This signals the loading code to prepend either #version 100 or #version 300 es as apropriate.
 
+#include "assets/h/vertexVersionCentroid.h"
+
 #if __VERSION__ >= 300
-	#define attribute in
-	#define varying out
-
-	#ifdef MSAA_FRAMEBUFFER_ENABLED
-		#define _centroid centroid
-	#else
-		#define _centroid
-	#endif
-
 	#ifndef BYPASS_PIXEL_SHADER
 		_centroid out vec2 uv0;
 		_centroid out vec2 uv1;
@@ -26,10 +19,8 @@
 	varying vec4 color;
 #endif
 
-#ifdef LOW_PRECISION
+#ifdef FOG
 	varying vec4 fogColor;
-	varying vec4 fogCoIor;
-	varying float moreFog;
 #endif
 
 #ifdef NEAR_WATER
@@ -38,24 +29,13 @@
 
 varying vec3 screen_pos;
 
-#ifdef AS_ENTITY_RENDERER
-	uniform MAT4 WORLDVIEWPROJ;
-#else
-	uniform MAT4 WORLDVIEW;
-	uniform MAT4 PROJ;
-#endif
-
-uniform vec4 FOG_COLOR;
-uniform vec2 FOG_CONTROL;
-uniform float RENDER_DISTANCE;
-uniform vec2 VIEWPORT_DIMENSION;
-uniform vec4 CURRENT_COLOR;
-uniform POS4 CHUNK_ORIGIN_AND_SCALE;
-uniform POS3 VIEW_POS;
-uniform float FAR_CHUNKS_DISTANCE;
-uniform highp float TIME;
-
+#include "assets/h/uniformWorldConstants.h"
+#include "assets/h/uniformPerFrameConstants.h"
+#include "assets/h/uniformShaderConstants.h"
+#include "assets/h/uniformRenderChunkConstants.h"
 #include "assets/h/waves.h"
+
+uniform highp float TOTAL_REAL_WORLD_TIME;
 
 attribute POS4 POSITION;
 attribute vec4 COLOR;
@@ -148,13 +128,13 @@ void main()
 	#if defined ALPHA_TEST && defined(LEAVES_WAVES)
 		if (color.g > color.b) {
 			POS3 l = POSITION.xyz;
-			gl_Position.s += sin(TIME * 1.8 + 1.7 * l.x + 1.6 * l.z + l.y) * 0.018;
+			gl_Position.s += sin(TOTAL_REAL_WORLD_TIME * 1.8 + 1.7 * l.x + 1.6 * l.z + l.y) * 0.018;
 		}
 	#endif
 		#if !defined(BYPASS_PIXEL_SHADER) && defined(WATER_WAVES)
 			if (isWater(color)) {
 				POS3 l = worldPos.xyz + VIEW_POS;
-				gl_Position.t += sin(TIME * 1.8 + 0.9 * l.x + 0.9 * l.z + l.y) * 0.095 * fract(POSITION.y);
+				gl_Position.t += sin(TOTAL_REAL_WORLD_TIME * 1.8 + 0.9 * l.x + 0.9 * l.z + l.y) * 0.095 * fract(POSITION.y);
 			}
 	#endif
 
@@ -164,7 +144,7 @@ void main()
 		#ifdef FANCY
 			float F = dot(normalize(relPos), UNIT_Y);
 			F = 1.0 - max(F, 0.1);
-			F = 1.0 - mix(F*F*F*F, 1.0, float(min(1.0, cameraDepth / FAR_CHUNKS_DISTANCE)));
+			F = 1.0 - mix(F * F * F * F, 1.0, float(min(1.0, cameraDepth / FAR_CHUNKS_DISTANCE)));
 
 			color.rg -= vec2(F * DIST_DESATURATION);
 
@@ -193,7 +173,7 @@ void main()
 				vec4 surfColor = vec4(color.rgb, 1.0);
 				color = surfColor;
 					
-				vec3 relPos =- worldPos.xyz;
+				vec3 relPos = -worldPos.xyz;
 				float camDist = length(relPos);
 				float cameraDist = camDist / FAR_CHUNKS_DISTANCE;
 			#endif

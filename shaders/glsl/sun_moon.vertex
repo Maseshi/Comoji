@@ -14,7 +14,7 @@ uniform vec2 FOG_CONTROL;
 
 void main()
 {
-    float malam = pow(max(min(1.0 - FOG_COLOR.r*1.5, 1.0), 0.0), 1.2);
+    float malam = pow(max(min(1.0 - FOG_COLOR.r*  1.5, 1.0), 0.0), 1.2);
     vec4 size = vec4(18., 1., 18., 1.);
     size.xz /= mix( 1., 5., malam );
     gl_Position = WORLDVIEWPROJ * (POSITION * size);

@@ -7,8 +7,8 @@
       "vrGeometryShader": "shaders/renderchunk.geometry",
       "fragmentShader": "shaders/renderchunk.fragment",
 
-      "+defines": ["LOW_PRECISION", "TEXEL_AA", "ATLAS_TEXTURE"],
-      "+states": ["DisableAlphaWrite"],
+      "+defines": [ "LOW_PRECISION", "TEXEL_AA", "ATLAS_TEXTURE" ],
+      "+states": [ "DisableAlphaWrite" ],
 
       "+samplerStates": [
         {
@@ -30,59 +30,30 @@
       ],
 
       "vertexFields": [
-        {
-          "field": "Position"
-        },
-        {
-          "field": "UV1"
-        },
-        {
-          "field": "Color"
-        },
-        {
-          "field": "UV0"
-        }
+        { "field": "Position" },
+        { "field": "UV1" },
+        { "field": "Color" },
+        { "field": "UV0" }
       ],
       "msaaSupport": "Both",
 
       "variants": [
-        {
-          "fog": {
-            "+defines": ["FOG"]
-          }
-        },
-        {
-          "lit": {
-            "+defines": ["ALWAYS_LIT"]
-          }
-        },
-        {
-          "underwater": {
-            "+defines": ["FOG"]
-          }
-        },
-        {
-          "fog.underwater": {}
-        },
-        {
-          "fading": {
-            "+defines": ["FOG", "ALLOW_FADE"]
-          }
-        }
+        { "fog": { "+defines": ["FOG"] } },
+        { "lit": { "+defines": ["ALWAYS_LIT"] } },
+        { "underwater": { "+defines": ["FOG"] } },
+        { "fog.underwater": {} },
+        { "fading": { "+defines": ["FOG", "ALLOW_FADE"] } }
       ]
     },
-    "terrain_opaque:terrain_base": {
 
+    "terrain_opaque:terrain_base": {
       "+variants": [
-        {
-          "underlava": {
-          "+states": ["DisableCulling"]
-          }
-        }
+        { "underlava": { "+states": ["DisableCulling"] } }
       ]
     },
+
     "terrain_opaque_seasons:terrain_base": {
-      "+defines": ["SEASONS"],
+      "+defines": [ "SEASONS" ],
       "+samplerStates": [
         {
           "samplerIndex": 0,
@@ -97,27 +68,22 @@
           "textureFilter": "Point"
         }
       ]
-
     },
 
     "terrain_blend:terrain_base": {
-      "+defines": ["BLEND"],
+      "+defines": [ "BLEND" ],
       "depthFunc": "LessEqual",
       "+states": [
         "Blending"
       ],
       "+variants": [
-        {
-          "underwater": {}
-        },
-        {
-          "fog.underwater": {}
-        }
+        { "underwater": { } },
+        { "fog.underwater": { } }
       ]
     },
 
     "terrain_blend_far:terrain_blend": {
-      "+defines": ["FOG"]
+      "+defines": [ "FOG" ]
     },
 
     "terrain_blend_no_culling:terrain_blend": {
@@ -126,14 +92,15 @@
       ]
     },
 
-    "terrain_doubleside:terrain_base": {},
+    "terrain_doubleside:terrain_base": { },
     "terrain_alpha_single_side:terrain_base": {
-      "+defines": ["ALPHA_TEST"],
-      "+states": ["EnableAlphaToCoverage"]
+      "+defines": [ "ALPHA_TEST" ],
+      "+states": [ "EnableAlphaToCoverage" ]
     },
+
     "terrain_alpha_seasons:terrain_base": {
-      "+defines": ["ALPHA_TEST", "SEASONS"],
-      "+states": ["DisableCulling", "EnableAlphaToCoverage"],
+      "+defines": [ "ALPHA_TEST", "SEASONS" ],
+      "+states": [ "DisableCulling", "EnableAlphaToCoverage" ],
       "+samplerStates": [
         {
           "samplerIndex": 0,
@@ -149,25 +116,29 @@
         }
       ]
     },
+
     "terrain_alpha:terrain_alpha_single_side": {
-      "+states": ["DisableCulling"],
+      "+states": [ "DisableCulling" ],
       "depthBias": 0.0,
       "slopeScaledDepthBias": 0.1,
       "depthBiasOGL": 0.0,
       "slopeScaledDepthBiasOGL": 0.5
     },
+
     "terrain_far:terrain_base": {
       "+defines": [
         "FOG",
         "LOW_PRECISION"
       ]
     },
+
     "terrain_seasons_far:terrain_opaque_seasons": {
       "+defines": [
         "FOG",
         "LOW_PRECISION"
       ]
     },
+
     "terrain_seasons_far_alpha:terrain_opaque_seasons": {
       "+defines": [
         "FOG",
@@ -175,9 +146,10 @@
         "SEASONS_FAR"
       ]
     },
+
     "terrain_inside_block": {
       "depthFunc": "LessEqual",
-
+      
       "vertexShader": "shaders/position.vertex",
       "vrGeometryShader": "shaders/position.geometry",
       "fragmentShader": "shaders/current_color.fragment",

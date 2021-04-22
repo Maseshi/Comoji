@@ -9,8 +9,8 @@
   #else
     _centroid in vec2 uv;
   #endif
-  #else
-    varying vec2 uv;
+#else
+  varying vec2 uv;
 #endif
 
 #include "assets/h/uniformShaderConstants.h"
@@ -29,33 +29,33 @@ uniform float RENDER_DISTANCE;
 void main()
 {
   #if !defined(TEXEL_AA) || !defined(TEXEL_AA_FEATURE)
-    vec4 diffuse = texture2D( TEXTURE_0, fract( uv * 5. ) );
+    vec4 diffuse = texture2D(TEXTURE_0, fract(uv * 5.));
   #else
-    vec4 diffuse = texture2D_AA(TEXTURE_0, fract( uv * 5. ) );
+    vec4 diffuse = texture2D_AA(TEXTURE_0, fract(uv * 5.));
   #endif
 
   #ifdef ALPHA_TEST
     if (diffuse.a < 0.5) discard;
   #endif
 
-  float India = length(- pos);
+  float lpos = length(-pos);
   vec4 fc = FOG_COLOR;
-  float dahiya = (1.0 - pow(FOG_CONTROL.y, 11.0));
+  float fog = (1.0 - pow(FOG_CONTROL.y, 11.0));
 
-  float area = (.1 - clamp(India, .0, .1)) * 10.;
-  diffuse = mix( vec4( .001 ), diffuse, area);
+  float area = (.1 - clamp(lpos, .0, .1)) * 10.;
+  diffuse = mix( vec4(.001), diffuse, area);
 
   fc.rgb = max(fc.rgb, .4);
-  fc.a *= 1. - dahiya;
+  fc.a *= 1. - fog;
   diffuse.a = min(fc.a, 1.5);
 
   #ifdef reflection
     vec2 u = -vpos.xz * .1;
-    vec3 c = vec3( 1.7, 1.6, 1.5 ) * lensflare( pos.xz * 13., u ) * 2.;
+    vec3 c = vec3(1.7, 1.6, 1.5) * lensflare(pos.xz * 13., u) * 2.;
     c = cc(c, .5, .1) * .5;
-    diffuse.rgb += c + .2 -clamp( length(- pos) / RENDER_DISTANCE * 200., 0., .2 );
+    diffuse.rgb += c + .2 - clamp(length(-pos) / RENDER_DISTANCE * 200., 0., .2);
     diffuse.a += length(c) * fc.a;
   #endif
 
-  gl_FragColor = clamp( diffuse - .05, 0., 1. );
+  gl_FragColor = clamp(diffuse - .05, 0., 1.);
 }
